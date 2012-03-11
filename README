@@ -1,0 +1,20 @@
+This is an alternative api to google translate !
+
+--------------------------------------------------------------------------------------
+TODO :
+
+   1- JSON, XML support
+
+
+--------------------------------------------------------------------------------------
+INSTALLING : 
+
+ - make sure you have pycurl module installed.  
+ Apache Configuration : 
+  to exacute python script you must add and .htaccess to your directory that will contain : 
+
+   AddHandler cgi-script .py
+   Options +ExecCGI
+   DirectoryIndex index.py
+
+Enjoy ! 
