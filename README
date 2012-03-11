@@ -4,7 +4,7 @@ This is an alternative api to google translate !
 TODO :
 
    1- JSON, XML support
-
+   2- This is translating form any language to English, so we'd like to add other language support 
 
 --------------------------------------------------------------------------------------
 INSTALLING : 
