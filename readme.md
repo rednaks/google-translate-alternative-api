@@ -13,9 +13,9 @@ This is an **alternative api** to google translate !
 * Apache Configuration : 
 To exacute python script you must add and .htaccess to your directory that will contain : 
 
-	AddHandler cgi-script .py
-	Options +ExecCGI
-	DirectoryIndex index.py
+		AddHandler cgi-script .py
+		Options +ExecCGI
+		DirectoryIndex index.py
 
 * Test:
 Now tape the url into the address bar of your favourite web browser and add ?text=<your text to translate> 
