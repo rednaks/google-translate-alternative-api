@@ -16,10 +16,12 @@ get_data = form.getvalue('text')
 json = form.getvalue('json')
 if(get_data is not None):
 	my_page = curl(cgi.escape(form.getvalue('text')))
-#	print 'Translating ...'
+	#print 'Translating ...'
 	parser = MyHTMLParser()
 	parser.feed(my_page)
-#	print '<p> Text to translate : '+get_data+'</p>'
+	#print '<p> Text to translate : '+get_data+'</p>'
+	my_text = parser.text;
+	print parser
 	if(json == 'true'):
 		my_text = '{"source": "%s", "translated": "%s"}' %(get_data,my_text)
 
