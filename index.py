@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-import mods.AlternativeApi
+from  mods.AlternativeApi import *
 import cgi
 
 
