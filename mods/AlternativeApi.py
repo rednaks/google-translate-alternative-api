@@ -34,9 +34,9 @@ class MyHTMLParser(HTMLParser):
          self.text = self.text+ data
 
 
-def curl(text):
+def curl(text,dlang='en'):
 	URL = 'http://translate.google.com/'
-	data = {'sl':'auto','tl':'en','js':'n','prev':'_t','hl':'en','ie':'UTF-8','layout':'2','eotf':'1','text':text,'file':''}
+	data = {'sl':'auto','tl':dlang,'js':'n','prev':'_t','hl':'en','ie':'UTF-8','layout':'2','eotf':'1','text':text,'file':''}
 	handle = pycurl.Curl()
 	b = StringIO.StringIO()
 	handle.setopt(pycurl.URL,URL)

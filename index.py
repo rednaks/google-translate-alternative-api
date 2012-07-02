@@ -14,8 +14,9 @@ print
 
 get_data = form.getvalue('text')
 json = form.getvalue('json')
+lang_dest = form.getvalue('dlang')
 if(get_data is not None):
-	my_page = curl(cgi.escape(form.getvalue('text')))
+	my_page = curl(cgi.escape(form.getvalue('text')),lang_dest)
 	parser = MyHTMLParser()
 	parser.feed(my_page)
 	my_text = parser.text;
