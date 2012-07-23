@@ -5,6 +5,8 @@ import pycurl
 import urllib
 import StringIO
 from lib.HTMLParser import HTMLParser
+from BeautifulSoup import BeautifulSoup
+import re
 
 found = False
 my_text = ''
@@ -32,6 +34,19 @@ class MyHTMLParser(HTMLParser):
         global found
         if(found):
          self.text = self.text+ data
+
+def BeautifulParser(page):
+	translated_text = ''
+	soup = BeautifulSoup(str(BeautifulSoup(page).findAll(id='result_box')[0]))
+	i = 0
+	for s in soup.findAll('span'):
+		if(i is not 0):
+			translated_text += s.getText()+' '
+		i += 1
+
+	return translated_text
+	 
+		
 
 
 def curl(text):
