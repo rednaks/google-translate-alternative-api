@@ -1,2 +1,6 @@
 *.py[c]
 test.py
+bin/
+lib/
+include/
+local/
