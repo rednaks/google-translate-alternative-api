@@ -1,10 +1,8 @@
 
 #-*- coding: utf-8 -*-
 
-import pycurl
-import urllib
-import StringIO
-from lib.HTMLParser import HTMLParser
+import requests
+from HTMLParser import HTMLParser
 from BeautifulSoup import BeautifulSoup
 import re
 
@@ -50,14 +48,10 @@ def BeautifulParser(page):
 
 
 def curl(text):
-	URL = 'http://translate.google.com/'
-	data = {'sl':'auto','tl':'en','js':'n','prev':'_t','hl':'en','ie':'UTF-8','layout':'2','eotf':'1','text':text,'file':''}
-	handle = pycurl.Curl()
-	b = StringIO.StringIO()
-	handle.setopt(pycurl.URL,URL)
-	handle.setopt(pycurl.POST,1)
-	handle.setopt(pycurl.POSTFIELDS,urllib.urlencode(data))
-	handle.setopt(pycurl.WRITEFUNCTION,b.write)
-	handle.perform()
-	return b.getvalue()
+	URL = 'https://translate.google.com/'
+	data = {'sl':'auto','tl':'en','js':'n','hl':'en','ie':'UTF-8','text':text,'file':''}
+	res = requests.post(URL, data)
+	if(res.ok):
+		return res.content
+	return None
 
